@@ -1,0 +1,45 @@
+body {
+    background-color: rgb(255, 92, 124);
+  }
+  
+  h1 {
+    color: white;
+  }
+  
+  p {
+    font-family: cursive;
+    font-size: 20px;
+    color:rgb(226, 255, 182);
+  }
+
+  li {
+      color:rgb(255, 0, 0);
+      font-size: 20px;
+  }
+
+  a {
+    color: rgb(253, 117, 145)
+  }
+
+  label {
+    color: greenyellow;
+    position:relative;
+    display:inline-block;
+  }
+
+  .invalid-data {
+    position: absolute;
+    color: red;
+    font-size:8em;
+    top:100%;
+  }
+
+  .deleteform {
+    display:inline-block;
+
+  }
+
+  .test {
+    color:red;
+    background-color:rgb(255, 111, 135);
+  }

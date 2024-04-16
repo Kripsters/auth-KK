@@ -1,17 +1,6 @@
 <?php
 
-echo "Hi, Sessions!";
+require "functions.php";
+require "router.php";
 
-session_start();
-
-$_SESSION["kakisavards"] = "Krigga";
-$_SESSION["age"] = 34632526234;
-
-?> 
-
-</br> 
-
-<?php
-echo "Hi, " . $_SESSION["kakisavards"];
-session_destroy();
 ?>
