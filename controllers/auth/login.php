@@ -3,28 +3,31 @@
 require "./Database.php";
 require "Validator.php";
 $config = require("./config.php");
+$db = new Database($config);
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $errors = [];
-    if(!Validator::string($_POST["username"], min:1, max:255)) {
-        $errors["username"] = "invalid username";
+    if(!Validator::string($_POST["email"], min:1, max:255)) {
+        $errors["email"] = "invalid email";
     }
     
     if(!Validator::string($_POST["password"], min:1, max:255)) {
         $errors["password"] = "invalid password";
     }
+
+    
+    $query = "SELECT * FROM users WHERE email = :email";
+    $params = [
+        ":email" => $_POST["email"]
+    ];
+    $user = $db->execute($query, $params)->fetch();
+    if (!$user || !password_verify($_POST["password"], $user["password"])) {
+        $errors["email"] = "Kkas nav labi";
+    }
+
     if (empty($errors)) {
-        $query = "SELECT * FROM users";
-        $params = [];
-        $db = new Database($config);
-        $posts = $db
-            ->execute($query, $params)
-            ->fetchAll();
-        foreach($posts as $post) {
-            if ($_POST["username"] == $post["username"] && $_POST["password"] == $post["password"]) {
-                $_SESSION["User"] = $post["username"];
-            }
-        }
+        $_SESSION["user"] = true;
+        $_SESSION["email"] = $_POST["email"];
     }
 }
 

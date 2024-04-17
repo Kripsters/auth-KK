@@ -3,15 +3,20 @@ require "views/components/head.php";
 require "views/components/navbar.php";
 ?>
     <h1> Log-in </h1>
-    <h2> Logged in as <?= $_SESSION["User"] ?? "no one!"?> </h2>
+    <h2> Logged in as <?= $_SESSION["email"] ?? "no one!"?> </h2>
     <form method="POST">
+
         <label>Email
-            <input name="email" value="<?= $_POST["email"] ?? "" ?>"/>
+            <input type="email" name="email" value="<?= $_POST["email"] ?? "" ?>"/>
         </label>
+        </br>
         <label>Password
-            <input name="password" value="<?= $_POST["password"] ?? "" ?>"/>
+            <input type="password" name="password" value="<?= $_POST["password"] ?? "" ?>"/>
         </label>
+        </br>
         <button>Submit</button>
+
+
         <?php if (isset($errors["email"])) { ?>
                 <p class="invalid-data"> <?= $errors["email"] ?> </p>
         <?php } ?>
