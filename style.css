@@ -41,3 +41,27 @@ body {
   .explanation {
     color: white;
   }
+
+  .flash {
+    opacity: 0%;
+    animation: disappear 3s;
+  }
+
+  @keyframes disappear {
+    0% {opacity: 100%;
+    visibility: visible;}
+    70% {opacity: 100%;}
+    100% {opacity: 0%;
+    visibility: hidden;}
+  }
+
+  .idris {
+    animation: idris 3s;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes idris {
+    0% {opacity: 100%;}
+    50% {opacity: 0%;}
+    100% {opacity: 100%;}
+    }

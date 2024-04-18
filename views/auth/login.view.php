@@ -3,7 +3,6 @@ require "views/components/head.php";
 require "views/components/navbar.php";
 ?>
     <h1> Log-in </h1>
-    <h2> Logged in as <?= $_SESSION["email"] ?? "no one!"?> </h2>
     <form method="POST">
 
         <label>Email
@@ -24,6 +23,12 @@ require "views/components/navbar.php";
                 <p class="invalid-data"> <?= $errors["password"] ?> </p>
         <?php } ?>
     </form>
+    <a href="/register"> Register </a>
+
+    <?php if(isset($_SESSION["flash"])) { ?>
+        <p class="flash"> <?=$_SESSION["flash"]?></p>
+    <?php } ?>
+
 <?php
 require "views/components/footer.php";  
 ?>

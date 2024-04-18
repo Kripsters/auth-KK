@@ -1,5 +1,7 @@
 <?php
 
+guest();
+
 $title = "Register";
 require "./Database.php";
 require "Validator.php";
@@ -34,7 +36,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             ":password" => password_hash($_POST["password"], PASSWORD_BCRYPT)
         ];
         $db->execute($query, $params);
-        header("Location: /");
+
+        $_SESSION["flash"] = "Tu esi pieteikts Armijā!";
+        header("Location: /login");
         die();
     }
 }

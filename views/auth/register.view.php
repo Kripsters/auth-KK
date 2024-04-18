@@ -2,7 +2,7 @@
 require "views/components/head.php";
 require "views/components/navbar.php";
 ?>
-    <h1> Register 蠕变</h1>
+    <h1> Register ਮੈਨੂੰ ਇਦਰੀਸ ਐਲਬਾ ਪਸੰਦ ਹੈ</h1>
     <form method="POST">
 
         <label>Email
@@ -24,9 +24,11 @@ require "views/components/navbar.php";
                 <p class="invalid-data"> <?= $errors["password"] ?> </p>
         <?php } ?>
     </form>
+    <a href="/login"> Log-in </a>
+    </br>
     </br>
     <a href="javascript:alert('I am Idris Elba');">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiHSKlmcp2gbMWKZM0PfERl9FNIM7VzkVletegaMNi&s">
+    <img class="idris" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiHSKlmcp2gbMWKZM0PfERl9FNIM7VzkVletegaMNi&s">
     </a>
 <?php
 require "views/components/footer.php";  
