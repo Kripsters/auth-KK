@@ -1,6 +1,6 @@
 <?php 
-require "views/components/head.php";
-require "views/components/navbar.php";
+require "../views/components/head.php";
+require "../views/components/navbar.php";
 ?>
     <h1> Log-in </h1>
     <form method="POST">
@@ -30,5 +30,5 @@ require "views/components/navbar.php";
     <?php } ?>
 
 <?php
-require "views/components/footer.php";  
+require "../views/components/footer.php";  
 ?>

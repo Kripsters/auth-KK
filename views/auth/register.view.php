@@ -1,6 +1,6 @@
 <?php 
-require "views/components/head.php";
-require "views/components/navbar.php";
+require "../views/components/head.php";
+require "../views/components/navbar.php";
 ?>
     <h1> Register ਮੈਨੂੰ ਇਦਰੀਸ ਐਲਬਾ ਪਸੰਦ ਹੈ</h1>
     <form method="POST">
@@ -31,5 +31,5 @@ require "views/components/navbar.php";
     <img class="idris" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiHSKlmcp2gbMWKZM0PfERl9FNIM7VzkVletegaMNi&s">
     </a>
 <?php
-require "views/components/footer.php";  
+require "../views/components/footer.php";  
 ?>

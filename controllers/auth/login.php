@@ -1,8 +1,8 @@
 <?php
 guest();
-require "./Database.php";
-require "Validator.php";
-$config = require("./config.php");
+require "../Core/Database.php";
+require "../Core/Validator.php";
+$config = require("../config.php");
 $db = new Database($config);
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 $title = "Log in";
-require "./views/auth/login.view.php";
+require "../views/auth/login.view.php";
 
 unset($_SESSION["flash"]);
 ?>
